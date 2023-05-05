@@ -1,27 +1,43 @@
 
 
-var btn = document.getElementById("xbbxing");  
+/*var btn = document.getElementById("xbbxing");  
+var btn1 = document.getElementById("1");  
 var btnLizheng = document.getElementById("xbba5e1252285294c389a1cda11a5e1b2fb"); 
-var btnLizheng001 = document.getElementById("lizheng001"); 
+var btnLizheng001 = document.getElementById("xbblizheng001"); 
 var copyBtn = document.getElementById("copyBtn"); 
 btn.onclick =function(){    
 	action('xbbxing');
 }  
+btn1.onclick = function() {
+	action('1');
+}
 btnLizheng.onclick =function() {
 	action('xbba5e1252285294c389a1cda11a5e1b2fb');
 }
 btnLizheng001.onclick =function() {
 	action('xbblizheng001');
 }
+*/
 
-	 
+	const buttons = document.querySelectorAll("button");
+	buttons.forEach(button => {
+		button.addEventListener("click", () => {
+			const corpid = button.parentElement.getAttribute('corpid');
+			const userId = button.parentElement.getAttribute('userId');
+			console.log(corpid + ":" + userId);
+			if (button.getAttribute('class') == 'icon') {
+				copyText();
+			} else {
+				action(corpid+"__"+userId);
+			}					
+		});
+	});
 
   function action(corp)
   {
 	chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
 		let port = chrome.tabs.connect(tabs[0].id, { name: 'julius-connect' })
 		// 相当于, 首先在当前选中的标签页, 创建一个服务器, name为 julius-connect 
-		console.log(corp);
 		port.postMessage({ message: corp, type: '1' });
 		// 发送消息
 	})     
