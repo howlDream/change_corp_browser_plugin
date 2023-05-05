@@ -1,24 +1,5 @@
 
 
-/*var btn = document.getElementById("xbbxing");  
-var btn1 = document.getElementById("1");  
-var btnLizheng = document.getElementById("xbba5e1252285294c389a1cda11a5e1b2fb"); 
-var btnLizheng001 = document.getElementById("xbblizheng001"); 
-var copyBtn = document.getElementById("copyBtn"); 
-btn.onclick =function(){    
-	action('xbbxing');
-}  
-btn1.onclick = function() {
-	action('1');
-}
-btnLizheng.onclick =function() {
-	action('xbba5e1252285294c389a1cda11a5e1b2fb');
-}
-btnLizheng001.onclick =function() {
-	action('xbblizheng001');
-}
-*/
-
 	const buttons = document.querySelectorAll("button");
 	buttons.forEach(button => {
 		button.addEventListener("click", () => {
@@ -26,7 +7,7 @@ btnLizheng001.onclick =function() {
 			const userId = button.parentElement.getAttribute('userId');
 			console.log(corpid + ":" + userId);
 			if (button.getAttribute('class') == 'icon') {
-				copyText();
+				copyText(corpid,userId);
 			} else {
 				action(corpid+"__"+userId);
 			}					
@@ -45,13 +26,15 @@ btnLizheng001.onclick =function() {
   
  
   
-  function copyText() {
+  function copyText(corpid,userId) {
  
 	// text area
 	const model = document.getElementById('copyText');
-	console.log(model.value);
 	const textArea = document.createElement('textArea');
-	textArea.value = model.value;
+	  var value = model.value;
+	  value = value.replace('$CORPID',corpid);
+	  value = value.replace('$USERID',userId);
+	textArea.value = value;
 	// 使text area不在viewport，同时设置不可见
 	textArea.style.position = 'absolute';
 	textArea.style.opacity = '0';
