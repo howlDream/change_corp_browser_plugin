@@ -25,6 +25,9 @@
   margin: 20px auto;
   display: grid;
   grid-gap: 40px 25px;
+  grid-template-columns: 99px 1px 35px;
+  align-items: center;
+  justify-content: center;
 }
  
 button,
@@ -39,15 +42,15 @@ button,
   justify-content: center;
   outline: none;
   cursor: pointer;
-  width: 150px;
-  height: 50px;
+  width: 120px;
+  height: 40px;
   background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
   border-radius: 30px;
   border: 1px solid #8F9092;
   box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 0 #CECFD1;
   transition: all 0.2s ease;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: #606060;
   text-shadow: 0 1px #fff;

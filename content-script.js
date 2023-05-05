@@ -1,3 +1,5 @@
+/*修改此文件需要重新安装和重启浏览器*/
+
 function change() {
 	localStorage.setItem('corpid', 'xbbxing');
 	localStorage.setItem('userId', 'xiao001');
@@ -6,6 +8,7 @@ function change() {
 }
 
 function changeCorp(corpid,userId) {
+	console.log(corpid+"_" + userId);
 	localStorage.setItem('corpid', corpid);
 	localStorage.setItem('userId', userId);
 	location.href = location.origin+'/#/';
@@ -19,7 +22,7 @@ chrome.extension.onConnect.addListener(function(port) {
 			  if (msg.message == "xbbxing")
 				// 小星星测试 公司
 				changeCorp('xbbxing','xiao001');
-			  else if (msg.message == "lizheng")
+			  else if (msg.message == "xbba5e1252285294c389a1cda11a5e1b2fb")
 				// 李正的公司
 				changeCorp('xbba5e1252285294c389a1cda11a5e1b2fb','1493661334632');
 			  else if (msg.message == 'xbblizheng001')

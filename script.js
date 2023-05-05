@@ -1,22 +1,19 @@
 
 
 var btn = document.getElementById("xbbxing");  
-var btnLizheng = document.getElementById("lizheng"); 
+var btnLizheng = document.getElementById("xbba5e1252285294c389a1cda11a5e1b2fb"); 
 var btnLizheng001 = document.getElementById("lizheng001"); 
 var copyBtn = document.getElementById("copyBtn"); 
 btn.onclick =function(){    
 	action('xbbxing');
 }  
 btnLizheng.onclick =function() {
-	action('lizheng');
+	action('xbba5e1252285294c389a1cda11a5e1b2fb');
 }
 btnLizheng001.onclick =function() {
 	action('xbblizheng001');
 }
 
-copyBtn.onclick = function(){
-	copyText();
-}  
 	 
 
   function action(corp)
