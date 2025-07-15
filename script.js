@@ -19,7 +19,7 @@
 	chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
 		let port = chrome.tabs.connect(tabs[0].id, { name: 'julius-connect' })
 		// 相当于, 首先在当前选中的标签页, 创建一个服务器, name为 julius-connect 
-		port.postMessage({ message: corp, type: '1' });
+		port.postMessage({ message: corp, type: 'changeCorp' });
 		// 发送消息
 	})     
   }
